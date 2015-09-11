@@ -16,23 +16,76 @@ and open the template in the editor.
     <body>
         
         <div class="container-fluid">
-            <nav class="navbar navbar-default barra_nav navbar-fixed-top container-fluid"> 
-                   
+            <!--nav class="navbar navbar-default barra_nav navbar-fixed-top container-fluid collapse navbar-collapse""> 
+                
                 <a class="navbar-brand" href="#">
                     <img src="img/gob-santafe.png" alt=""/>
                 </a>
-                <!--en lado derecho de la barra-->
-                <button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn pull-right">Cerrar sesión</button>
-                <p class="navbar-text pull-right" id="welcome_usuario"></p>
-                <a id="avatar" href="#perfil_usuario"  >
-                    <img class="img-circle avatar" src="" alt="avatar"/>
-                </a>
+                
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#elementos_nav" aria-expanded="false">
+                    <span class="sr-only">Opciones</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <div id="elementos_nav" >
+                    
+                    <button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn">Cerrar sesión</button>
+                    <p class="navbar-text " id="welcome_usuario"></p>
+                    <a id="avatar" href="#perfil_usuario"  >
+                        <img class="img-circle avatar" src="" alt="avatar"/>
+                    </a>
+                </div>
+            </nav-->
+            
+            <nav class="navbar navbar-default barra_nav">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_colapsed" aria-expanded="false">
+                      <span class="sr-only">Navegación</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                     <a class="navbar-brand" href="#">
+                        <img src="img/gob-santafe.png" alt=""/>
+                    </a>
+                  </div>
+
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse navbar-right" id="nav_colapsed">
+                    <ul class="nav navbar-nav">
+                          <li><p class="navbar-text " id="welcome_usuario"></p></li>
+                          <li><a id="avatar" href="#perfil_usuario" > <img class="img-circle avatar" src="" alt="avatar"/> </a> </li>
+                          <li><button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn">Cerrar sesión</button></li>
+                    </ul>
+                     
+                   
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li> <a id="avatar" href="#perfil_usuario"><img class="img-circle avatar" src="" alt="avatar"/></a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn">Cerrar sesión</button></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
             </nav>
+            
+            
         
         
         
             <!--Formulario modifica perfil-->
             <form id="perfil_usuario" class="white-popup-block mfp-hide ">
+                <div class="titulo">Editar Perfil de Usuario</div>
+                <a id="avatar" href="#perfil_usuario"  >
+                    <img class="img-circle avatar" src="" alt="avatar"/>
+                </a>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -53,13 +106,8 @@ and open the template in the editor.
                   <label for="repitePassword">Repetir Contraseña</label>
                   <input type="password" class="form-control" id="repitePassword" placeholder="Repetir Contraseña">
                 </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-default">Guardar</button>
+  
+                <button type="submit" class="btn btn-default pull-right">Guardar</button>
             </form>
             
         </div>

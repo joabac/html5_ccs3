@@ -42,7 +42,7 @@ $(document).ready(function ()
     $('#avatar').magnificPopup({
 		type: 'inline',
 		preloader: false,
-		focus: '#name',
+		focus: '#nombre',
 
 		// When elemened is focused, some mobile browsers in some cases zoom in
 		// It looks not nice, so we disable it:
@@ -51,8 +51,15 @@ $(document).ready(function ()
 				if($(window).width() < 700) {
 					this.st.focus = false;
 				} else {
-					this.st.focus = '#name';
+					this.st.focus = '#nombre';
 				}
+                                
+                                $('perfil_usuario .avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
+                                
+                                $('perfil_usuario #nombre').val(usuario.nombre);
+                                $('perfil_usuario #apellido').val(usuario.apellido);
+                                $('perfil_usuario #email').val(usuario.email);
+                                $('perfil_usuario #nombre').val(usuario.nombre);
 			}
 		}
     });

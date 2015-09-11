@@ -21,6 +21,7 @@ lessc -x bootstrap.less /var/www/tp_final/public_html/css/bootstrap_tpfinal.css
 html
 {
     font-family: @santaFe_font_family;
+    
 }
 
 
@@ -39,6 +40,29 @@ html
     display: none;
 }
 
+
+.radio_esquinas(@radio)
+{
+    -webkit-border-radius: @radio;
+    -moz-border-radius: @radio;
+    border-radius: @radio;
+}
+
+.radio_esquinas_top_bottom(@radio_top,@radio_bottom)
+{
+    
+    -webkit-border-radius: @radio_top;
+    -webkit-border-bottom-right-radius: @radio_bottom;
+    -webkit-border-bottom-left-radius: @radio_bottom;
+    -moz-border-radius: @radio_top;
+    -moz-border-radius-bottomright: @radio_bottom;
+    -moz-border-radius-bottomleft: @radio_bottom;
+    border-radius: @radio_top;
+    border-bottom-right-radius: @radio_bottom;
+    border-bottom-left-radius: @radio_bottom;
+}
+
+
 @media (min-width: 769px)
 {
     body
@@ -47,22 +71,19 @@ html
 
         & .barra_nav
         {
+           
             background-color: @santaFe_color_marca;
             height: 55px;
             font-size: 15px;
-            
-            & #cerrar_sesion
+            & #nav_colapsed
             {
-                margin-right: 5px;
+                width: 370px;
             }
-            
-            .avatar
+            & .avatar
             {
-                .pull-right;
                 height: 45px;
                 width: auto;
-                margin-right: 5px;
-                margin-top: 5px;
+                margin-top: -10px;
             }
             
             & .navbar-brand
@@ -74,10 +95,32 @@ html
         
         & .white-popup-block
         {
-            
+            & .avatar
+            {
+                height: 45px;
+                width: auto;
+                margin-right: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            & .titulo
+            {
+                margin-top: -40px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: -40px;
+                margin-right: -40px;
+                padding-left: 2em;
+                font-weight: bold;
+                color: #ffffff;
+                .radio_esquinas_top_bottom(20px,0px);
+                background-color: @santaFe_color_marca;
+               
+            }
             background-color: @santaFe_color_base;
+            .radio_esquinas(20px);
             opacity: .98;
-            padding: 30px 40px;
+            padding: 40px 40px;
             text-align: left;
             max-width: 650px;
             margin: 40px auto;
@@ -86,9 +129,7 @@ html
 
         & .loguin
         {
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            border-radius: 20px;
+            .radio_esquinas(20px);
             -webkit-box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
             -moz-box-shadow:    0px 0px 21px 0px rgba(50, 50, 50, 0.99);
             box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.99);
@@ -107,28 +148,15 @@ html
         
         & .barra_nav
         {
+           
             background-color: @santaFe_color_marca;
             border-color: @santaFe_color_marca;
             font-size: 13px;
-            & #cerrar_sesion
-            {
-                margin-right: 0px;
-               
-            }
-            & #welcome_usuario
-            {
-                margin-right: 5px;
-            }
             
-            .avatar
+            & .avatar
             {
-                .pull-right;
                 height: 45px;
-                width: auto;
-                margin-right: 5px;
-                margin-top: 5px;
-                border: #000;
-                border-width: 1px;
+                width: auto; 
             }
             
             & .navbar-brand
@@ -137,14 +165,44 @@ html
                 width: auto;
                 padding: 5px;
             }
+            
+            & #nav_colapsed
+            {
+                background-color: @santaFe_color_base;
+                & #welcome_usuario
+                {
+                    display: none;
+                }
+            }
         }  
         
         & .white-popup-block
         {
-            
+            & .avatar
+            {
+                height: 45px;
+                width: auto;
+                margin-right: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            & .titulo
+            {
+                margin-top: -40px;
+                height: 40px;
+                line-height: 40px;
+                margin-left: -40px;
+                margin-right: -40px;
+                padding-left: 2em;
+                font-weight: bold;
+                color: #ffffff;
+                .radio_esquinas_top_bottom(20px,0px);
+                background-color: @santaFe_color_marca;
+            }
+            .radio_esquinas(20px);
             background-color: @santaFe_color_base;
             opacity: .98;
-            padding: 30px 40px;
+            padding: 40px 40px;
             text-align: left;
             max-width: 650px;
             margin: 40px auto;
@@ -160,24 +218,25 @@ html
 @media (max-width: 500px) 
 {
     
-    body{
-       
+    body
+    {
+        min-width: 240px;
+        
         & .barra_nav
         {
-            & #cerrar_sesion
+            & .collapsed
             {
-                .pull-left;
-                margin-left: 5px;
-
+                display: inline-block;
             }
 
-            & #welcome_usuario
+            & #nav_colapsed
             {
-                display: none;
-            }
-            .avatar
-            {
-                 display: none;
+                width: 200px;
+                background-color: @santaFe_color_base;
+                & #welcome_usuario
+                {
+                    display: none;
+                }
             }
             
             & .navbar-brand
@@ -190,14 +249,43 @@ html
         
         & .white-popup-block
         {
-            
+            & .avatar
+            {
+                height: 35px;
+                width: auto;
+                margin-right: 5px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+            & .titulo
+            {
+                margin-top: -40px;
+                height: 30px;
+                line-height: 30px;
+                margin-left: -10px;
+                margin-right: -10px;
+                padding-left: 2em;
+                font-weight: bold;
+                color: #ffffff;
+                .radio_esquinas_top_bottom(10px,0px);
+                background-color: @santaFe_color_marca;
+                
+                
+            }
             background-color: @santaFe_color_base;
+            .radio_esquinas(10px);
             opacity: .98;
-            padding: 30px 40px;
+            padding: 40px 10px;
             text-align: left;
             max-width: 650px;
             margin: 40px auto;
             position: relative;
+            
+            & .mfp-close
+            {
+                height: 30px;
+                line-height: 30px;
+            }
         }
     }
 }
