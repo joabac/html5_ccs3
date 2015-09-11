@@ -1,0 +1,133 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08/09/2015, 09:58:38
+    Author     : alumno_academia
+*/
+
+
+/*PARA COMPILARLO EN ubuntu
+
+lessc -x bootstrap.less /var/www/tp_final/public_html/css/bootstrap_tpfinal.css
+*/
+@santaFe_color: #e30613;
+@santaFe_color_base: #D8DBDD;
+@santaFe_font_family: Aller;
+
+
+html
+{
+    font-family: @santaFe_font_family;
+}
+
+
+.loguin
+{
+    margin-top: 25%;
+    background-color: @santaFe_color;
+    padding: 3em;
+}
+
+.logo
+{
+    background-image: url("../img/gob-santafe.png");
+    background-repeat: no-repeat;
+    width: 186px;
+    height: 39px;
+    margin-top: 5px;
+}
+
+#alerta
+{
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+    -moz-box-shadow:    0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+    box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+    display: none;
+}
+
+@media (min-width: 769px)
+{
+    body
+    {
+        background-color: @santaFe_color_base;
+        
+        
+        & .barra_nav
+        {
+            background-color: @santaFe_color;
+            height: 55px;
+            font-size: 15px;
+            
+            & #cerrar_sesion
+            {
+                margin-right: 5px;
+            }
+        }
+
+        & .loguin
+        {
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            -webkit-box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+            -moz-box-shadow:    0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+            box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+        }
+
+       & .logo
+       {
+           margin-left: 10%;
+       }
+    }
+}
+
+@media (max-width: 768px) 
+{
+    body
+    {
+        background-color: @santaFe_color;
+        height: 55px;
+        & .barra_nav
+        {
+            background-color: @santaFe_color;
+            border-color: @santaFe_color;
+            font-size: 13px;
+            & #cerrar_sesion
+            {
+                margin-right: 0px;
+               
+            }
+            & #welcome_usuario
+            {
+                margin-right: 5px;
+            }
+            
+        }
+        
+        .logo
+        {
+            margin-left: 5px;
+        }
+    }
+    
+    
+}
+
+
+@media (max-width: 500px) 
+{
+     & #cerrar_sesion
+    {
+        .pull-left;
+        margin-left: 5px;
+
+    }
+    
+    & #welcome_usuario
+    {
+        display: none;
+    }
+}
