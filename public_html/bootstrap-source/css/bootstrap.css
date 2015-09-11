@@ -6830,12 +6830,25 @@ html {
   body .barra_nav {
     background-color: #e30613;
     border-color: #e30613;
+    font-size: 13px;
   }
   body .barra_nav #cerrar_sesion {
     margin-right: 0px;
   }
+  body .barra_nav #welcome_usuario {
+    margin-right: 5px;
+  }
   body .logo {
     margin-left: 5px;
+  }
+}
+@media (max-width: 500px) {
+  #cerrar_sesion {
+    float: left !important;
+    margin-left: 5px;
+  }
+  #welcome_usuario {
+    display: none;
   }
 }
 @font-face {
