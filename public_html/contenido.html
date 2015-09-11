@@ -10,6 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/autentica.js" type="text/javascript"></script>
+        <link href="js/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"/>
         <link href="css/bootstrap_tpfinal.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -23,13 +24,50 @@ and open the template in the editor.
                 <!--en lado derecho de la barra-->
                 <button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn pull-right">Cerrar sesión</button>
                 <p class="navbar-text pull-right" id="welcome_usuario"></p>
-                <img src="img/avatars/avatar1.png" alt="" class="img-circle avatar"/>
+                <a id="avatar" href="#perfil_usuario"  >
+                    <img class="img-circle avatar" src="" alt="avatar"/>
+                </a>
             </nav>
-        <div></div>
         
+        
+        
+            <!--Formulario modifica perfil-->
+            <form id="perfil_usuario" class="white-popup-block mfp-hide ">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                  <label for="apellido">Apellido</label>
+                  <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Contraseña</label>
+                  <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                </div>
+                 <div class="form-group">
+                  <label for="repitePassword">Repetir Contraseña</label>
+                  <input type="password" class="form-control" id="repitePassword" placeholder="Repetir Contraseña">
+                </div>
+
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-default">Guardar</button>
+            </form>
+            
+        </div>
         <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/md5.js" type="text/javascript"></script>
         <script src="js/contenido.js" type="text/javascript"></script>
+        <script src="js/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript"></script>
+        
     </body>
 </html>

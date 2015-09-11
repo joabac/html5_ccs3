@@ -6816,6 +6816,15 @@ html {
   body .barra_nav .navbar-brand {
     padding: 5px;
   }
+  body .white-popup-block {
+    background-color: #d8dbdd;
+    opacity: .98;
+    padding: 30px 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 40px auto;
+    position: relative;
+  }
   body .loguin {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -6855,6 +6864,15 @@ html {
     width: auto;
     padding: 5px;
   }
+  body .white-popup-block {
+    background-color: #d8dbdd;
+    opacity: .98;
+    padding: 30px 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 40px auto;
+    position: relative;
+  }
 }
 @media (max-width: 500px) {
   body .barra_nav #cerrar_sesion {
@@ -6871,6 +6889,15 @@ html {
     height: 15px;
     width: auto;
     padding: 5px;
+  }
+  body .white-popup-block {
+    background-color: #d8dbdd;
+    opacity: .98;
+    padding: 30px 40px;
+    text-align: left;
+    max-width: 650px;
+    margin: 40px auto;
+    position: relative;
   }
 }
 @font-face {

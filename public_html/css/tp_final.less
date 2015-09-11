@@ -13,7 +13,7 @@ and open the template in the editor.
 
 lessc -x bootstrap.less /var/www/tp_final/public_html/css/bootstrap_tpfinal.css
 */
-@santaFe_color: #e30613;
+@santaFe_color_marca: #e30613;
 @santaFe_color_base: #D8DBDD;
 @santaFe_font_family: Aller;
  
@@ -27,7 +27,7 @@ html
 .loguin
 {
     margin-top: 25%;
-    background-color: @santaFe_color;
+    background-color: @santaFe_color_marca;
     padding: 3em;
 }
 
@@ -44,11 +44,10 @@ html
     body
     {
         background-color: @santaFe_color_base;
-        
-        
+
         & .barra_nav
         {
-            background-color: @santaFe_color;
+            background-color: @santaFe_color_marca;
             height: 55px;
             font-size: 15px;
             
@@ -72,6 +71,18 @@ html
             }
             
         }
+        
+        & .white-popup-block
+        {
+            
+            background-color: @santaFe_color_base;
+            opacity: .98;
+            padding: 30px 40px;
+            text-align: left;
+            max-width: 650px;
+            margin: 40px auto;
+            position: relative;
+        }
 
         & .loguin
         {
@@ -91,13 +102,13 @@ html
 {
     body
     {
-        background-color: @santaFe_color;
+        background-color: @santaFe_color_marca;
         height: 40px;
         
         & .barra_nav
         {
-            background-color: @santaFe_color;
-            border-color: @santaFe_color;
+            background-color: @santaFe_color_marca;
+            border-color: @santaFe_color_marca;
             font-size: 13px;
             & #cerrar_sesion
             {
@@ -127,6 +138,18 @@ html
                 padding: 5px;
             }
         }  
+        
+        & .white-popup-block
+        {
+            
+            background-color: @santaFe_color_base;
+            opacity: .98;
+            padding: 30px 40px;
+            text-align: left;
+            max-width: 650px;
+            margin: 40px auto;
+            position: relative;
+        }
         
     }
     
@@ -163,6 +186,18 @@ html
                 width: auto;
                 padding: 5px;
             }
+        }
+        
+        & .white-popup-block
+        {
+            
+            background-color: @santaFe_color_base;
+            opacity: .98;
+            padding: 30px 40px;
+            text-align: left;
+            max-width: 650px;
+            margin: 40px auto;
+            position: relative;
         }
     }
 }

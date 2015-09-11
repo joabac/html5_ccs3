@@ -7,7 +7,8 @@
             "apellido":"usuario",
             "email":"usuario@usuario.com",
             "user":"usuario",
-            "pass": "f8032d5cae3de20fcec887f395ec9a6a"
+            "pass": "f8032d5cae3de20fcec887f395ec9a6a",
+            "avatar": "avatar1"
         }
     },
     {   
@@ -18,7 +19,8 @@
             "apellido":"pedro",
             "email":"pedro@pedro.com",
             "user":"pedro",
-            "pass": "c6cc8094c2dc07b700ffcc36d64e2138"
+            "pass": "c6cc8094c2dc07b700ffcc36d64e2138",
+            "avatar": "avatar2"
         }
     }
     
