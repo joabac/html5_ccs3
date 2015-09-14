@@ -36,6 +36,7 @@ $(document).ready(function ()
     });
     
     $('#welcome_usuario').html('Bienvenido: '+usuario.user);
+    $('#welcome_usuario_colapsed').html('Bienvenido: '+usuario.user);
     $('.avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
     
     
@@ -54,15 +55,41 @@ $(document).ready(function ()
 					this.st.focus = '#nombre';
 				}
                                 
-                                $('perfil_usuario .avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
+                                $('#perfil_usuario .avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
                                 
-                                $('perfil_usuario #nombre').val(usuario.nombre);
-                                $('perfil_usuario #apellido').val(usuario.apellido);
-                                $('perfil_usuario #email').val(usuario.email);
-                                $('perfil_usuario #nombre').val(usuario.nombre);
+                                $('#perfil_usuario #nombre').val(usuario.nombre);
+                                $('#perfil_usuario #apellido').val(usuario.apellido);
+                                $('#perfil_usuario #email').val(usuario.email);
+                                $('#perfil_usuario #user').val(usuario.user);
 			}
 		}
     });
+    
+    
+    $('.select_avatar').on('click',function (evt)
+    {
+        ruta_nuevo_avatar = this.currentSrc.split('/');
+        nuevo_avatar = ruta_nuevo_avatar[ruta_nuevo_avatar.length-1];
+        $('.avatar').prop('src','img/avatars/'+nuevo_avatar);
+        
+    });
+    
+    
+    $('#perfil_usuario').submit(function (event)
+    {
+        event.preventDefault();
+        
+        //TODO: validar campos y guardar en local session
+//        ruta_nuevo_avatar = $('#perfil_usuario .avatar').prop('src').split('/');
+//        nuevo_avatar = ruta_nuevo_avatar[ruta_nuevo_avatar.length-1];
+//                  
+//        $('#perfil_usuario #nombre').val();
+//        $('#perfil_usuario #apellido').val();
+//        $('#perfil_usuario #email').val();
+//        $('#perfil_usuario #password').val();
+//        $('#perfil_usuario #user').val();
+        
+    })
     
     
 });

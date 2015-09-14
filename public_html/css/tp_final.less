@@ -40,6 +40,38 @@ html
     display: none;
 }
 
+.avatar
+{
+    height: 45px;
+    width: auto;
+    padding: 0px;
+}
+
+#avatar
+{
+    height: 45px;
+    width: auto;
+    padding: 0px;
+}
+
+.select_avatar
+{
+    height: 45px;
+    width: auto;
+    padding: 0px;
+    margin-left: 4em;
+}
+
+#perfil_usuario
+{
+    
+    & .dropdown
+    {    
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
 
 .radio_esquinas(@radio)
 {
@@ -62,8 +94,8 @@ html
     border-bottom-left-radius: @radio_bottom;
 }
 
-
-@media (min-width: 769px)
+/* > 769px*/
+@media (min-width: 769px)   
 {
     body
     {
@@ -83,12 +115,26 @@ html
             {
                 height: 45px;
                 width: auto;
-                margin-top: -10px;
+                margin-top: 4px;
             }
             
             & .navbar-brand
             {
                 padding: 5px;
+            }
+            
+            #welcome_usuario
+            {
+                
+            }
+            #welcome_usuario_colapsed
+            {
+                display: none;
+            }
+            
+            #cerrar_sesion
+            {
+                margin-left: 5px;
             }
             
         }
@@ -139,6 +185,7 @@ html
     }
 }
 
+/* <= 768px*/
 @media (max-width: 768px) 
 {
     body
@@ -166,14 +213,33 @@ html
                 padding: 5px;
             }
             
+            & .collapsed
+            {
+                display: inline-block;
+            }
+
             & #nav_colapsed
             {
-                background-color: @santaFe_color_base;
-                & #welcome_usuario
-                {
-                    display: none;
-                }
+               background-color: @santaFe_color_base;
+               padding-left: 2em;
+               padding-top: 1em;
             }
+            
+            #welcome_usuario
+            {
+                display: none;
+            }
+            #welcome_usuario_colapsed
+            {
+                margin-left: 1em;
+            }
+            
+            #cerrar_sesion
+            {
+               
+            }
+            
+           
         }  
         
         & .white-popup-block
@@ -214,8 +280,8 @@ html
     
 }
 
-
-@media (max-width: 500px) 
+ /* <= 500px*/
+@media (max-width: 500px)
 {
     
     body
@@ -231,12 +297,9 @@ html
 
             & #nav_colapsed
             {
-                width: 200px;
                 background-color: @santaFe_color_base;
-                & #welcome_usuario
-                {
-                    display: none;
-                }
+                padding-left: 2em;
+                padding-top: 1em;
             }
             
             & .navbar-brand
@@ -245,6 +308,21 @@ html
                 width: auto;
                 padding: 5px;
             }
+            
+            #welcome_usuario
+            {
+                display: none;
+            }
+            #welcome_usuario_colapsed
+            {
+                margin-left: 1em;
+            }
+            
+            #cerrar_sesion
+            {
+               
+            }
+            
         }
         
         & .white-popup-block
@@ -272,6 +350,7 @@ html
                 
                 
             }
+            
             background-color: @santaFe_color_base;
             .radio_esquinas(10px);
             opacity: .98;

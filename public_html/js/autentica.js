@@ -5,7 +5,7 @@
  */
 
 
-    if( localStorage.getItem('usuario') == null)
+    if( sessionStorage.getItem('usuario') == null)
     {
 //        if( $('#recordar').is(":checked") === false)    //TODO cerrar sesion
 //           localStorage.removeItem('usuario');

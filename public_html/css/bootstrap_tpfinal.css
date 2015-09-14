@@ -6794,6 +6794,27 @@ html {
   box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
   display: none;
 }
+.avatar {
+  height: 45px;
+  width: auto;
+  padding: 0px;
+}
+#avatar {
+  height: 45px;
+  width: auto;
+  padding: 0px;
+}
+.select_avatar {
+  height: 45px;
+  width: auto;
+  padding: 0px;
+  margin-left: 4em;
+}
+#perfil_usuario .dropdown {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* > 769px*/
 @media (min-width: 769px) {
   body {
     background-color: #d8dbdd;
@@ -6809,10 +6830,16 @@ html {
   body .barra_nav .avatar {
     height: 45px;
     width: auto;
-    margin-top: -10px;
+    margin-top: 4px;
   }
   body .barra_nav .navbar-brand {
     padding: 5px;
+  }
+  body .barra_nav #welcome_usuario_colapsed {
+    display: none;
+  }
+  body .barra_nav #cerrar_sesion {
+    margin-left: 5px;
   }
   body .white-popup-block {
     background-color: #d8dbdd;
@@ -6862,6 +6889,7 @@ html {
     box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
   }
 }
+/* <= 768px*/
 @media (max-width: 768px) {
   body {
     background-color: #e30613;
@@ -6881,11 +6909,19 @@ html {
     width: auto;
     padding: 5px;
   }
+  body .barra_nav .collapsed {
+    display: inline-block;
+  }
   body .barra_nav #nav_colapsed {
     background-color: #d8dbdd;
+    padding-left: 2em;
+    padding-top: 1em;
   }
-  body .barra_nav #nav_colapsed #welcome_usuario {
+  body .barra_nav #welcome_usuario {
     display: none;
+  }
+  body .barra_nav #welcome_usuario_colapsed {
+    margin-left: 1em;
   }
   body .white-popup-block {
     -webkit-border-radius: 20px;
@@ -6927,6 +6963,7 @@ html {
     background-color: #e30613;
   }
 }
+/* <= 500px*/
 @media (max-width: 500px) {
   body {
     min-width: 240px;
@@ -6935,16 +6972,20 @@ html {
     display: inline-block;
   }
   body .barra_nav #nav_colapsed {
-    width: 200px;
     background-color: #d8dbdd;
-  }
-  body .barra_nav #nav_colapsed #welcome_usuario {
-    display: none;
+    padding-left: 2em;
+    padding-top: 1em;
   }
   body .barra_nav .navbar-brand {
     height: 15px;
     width: auto;
     padding: 5px;
+  }
+  body .barra_nav #welcome_usuario {
+    display: none;
+  }
+  body .barra_nav #welcome_usuario_colapsed {
+    margin-left: 1em;
   }
   body .white-popup-block {
     background-color: #d8dbdd;

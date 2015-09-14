@@ -39,41 +39,28 @@ and open the template in the editor.
                 </div>
             </nav-->
             
-            <nav class="navbar navbar-default barra_nav">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_colapsed" aria-expanded="false">
-                      <span class="sr-only">Navegación</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                     <a class="navbar-brand" href="#">
-                        <img src="img/gob-santafe.png" alt=""/>
-                    </a>
-                  </div>
-
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse navbar-right" id="nav_colapsed">
-                    <ul class="nav navbar-nav">
-                          <li><p class="navbar-text " id="welcome_usuario"></p></li>
-                          <li><a id="avatar" href="#perfil_usuario" > <img class="img-circle avatar" src="" alt="avatar"/> </a> </li>
-                          <li><button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn">Cerrar sesión</button></li>
-                    </ul>
-                     
-                   
-                    <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown">
-                        <ul class="dropdown-menu">
-                            <li> <a id="avatar" href="#perfil_usuario"><img class="img-circle avatar" src="" alt="avatar"/></a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn">Cerrar sesión</button></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+            <nav class="navbar navbar-default barra_nav navbar-fixed-top">
+                
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_colapsed" aria-expanded="false">
+                    <span class="sr-only">Navegación</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                   <a class="navbar-brand" href="#">
+                      <img src="img/gob-santafe.png" alt=""/>
+                  </a>
+                </div>
+                  
+                <ul class="nav navbar-nav navbar-right" id="nav_colapsed">
+                      <li><p class="navbar-text " id="welcome_usuario"></p></li>
+                      <li><a id="avatar"  href="#perfil_usuario" ><img class="img-circle avatar" src="" alt="avatar"/><span class="label label-default align-right" id="welcome_usuario_colapsed"></span></a> </li>
+                      <li><button type="button" id="cerrar_sesion" class="btn btn-default navbar-btn ">Cerrar sesión</button></li>
+                </ul>
+                 
+               
             </nav>
             
             
@@ -83,9 +70,25 @@ and open the template in the editor.
             <!--Formulario modifica perfil-->
             <form id="perfil_usuario" class="white-popup-block mfp-hide ">
                 <div class="titulo">Editar Perfil de Usuario</div>
-                <a id="avatar" href="#perfil_usuario"  >
+                <!--a id="avatar_perfil" href="#perfil_usuario"  >
                     <img class="img-circle avatar" src="" alt="avatar"/>
-                </a>
+                </a-->
+                
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="avatar_perfil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img class="img-circle avatar" src="" alt="avatar"/><span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="avatar_perfil">
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar1.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar3.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar4.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar5.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar6.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar7.png" alt=""/></li>
+                      <li><img class="img-circle select_avatar" src="img/avatars/avatar8.png" alt=""/></li>
+                    </ul>
+                </div>
+                
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -95,8 +98,12 @@ and open the template in the editor.
                   <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                 </div>
                 <div class="form-group">
+                  <label for="user">Usuario</label>
+                  <input type="text" class="form-control" id="user" name="user" placeholder="Usuario">
+                </div>
+                <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Email">
+                  <input type="email" class="form-control" id="email" placeholder="Email" disabled>
                 </div>
                 <div class="form-group">
                   <label for="password">Contraseña</label>
