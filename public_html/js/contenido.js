@@ -107,8 +107,8 @@ $(document).ready(function ()
                         "avatar": nuevo_avatar})
                 );
             
-            usuario = sessionStorage.getItem('usuario');
-            alert('Usuario modificado: ' + usuario);
+            usuario = JSON.parse(sessionStorage.getItem('usuario'));
+            alert('Usuario modificado: ' + sessionStorage.getItem('usuario'));
         }
        
         
