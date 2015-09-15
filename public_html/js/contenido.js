@@ -74,10 +74,20 @@ $(document).ready(function ()
         
     });
     
+      
     
     $('#perfil_usuario').submit(function (event)
     {
         event.preventDefault();
+        validaForm()
+        if($('#perfil_usuario').valid())
+        {
+            alert('valido');
+        }
+        else
+        {
+            alert('no valido');
+        }
         
         //TODO: validar campos y guardar en local session
 //        ruta_nuevo_avatar = $('#perfil_usuario .avatar').prop('src').split('/');
@@ -89,7 +99,79 @@ $(document).ready(function ()
 //        $('#perfil_usuario #password').val();
 //        $('#perfil_usuario #user').val();
         
-    })
+    });
     
-    
+function validaForm()
+{
+    return $('#perfil_usuario').validate(
+            {
+               rules: {
+                nombre: 
+                {
+                    required:true,
+                    minlength: 2,
+                    maxlength: 20
+                },
+                apellido:
+                {    
+                    required:true,
+                    minlength: 2,
+                    maxlength: 20
+                },
+                user:
+                {
+                    required:true,
+                    minlength: 2,
+                    maxlength: 15
+                },
+                email: {
+                  required: true,
+                  email: true
+                },
+                password:{
+                    minlength: 6
+                },
+                rep_password:{
+                    
+                    minlength: 6,
+                    equalTo: "#password"
+                }
+              },
+              messages: {
+                nombre: 
+                {
+                    required: "Este campo es requerido.",
+                    minlength: jQuery.validator.format("Su minima lngitud es de {0} caracteres."),
+                    maxlength: jQuery.validator.format("Su maxima lngitud es de {0} caracteres."),
+                },
+                apellido:
+                {    
+                    required: "Este campo es requerido.",
+                    minlength: jQuery.validator.format("Su minima lngitud es de {0} caracteres."),
+                    maxlength: jQuery.validator.format("Su maxima lngitud es de {0} caracteres."),
+                },
+                user:
+                {
+                    required: "Este campo es requerido.",
+                    minlength: jQuery.validator.format("Su minima lngitud es de {0} caracteres."),
+                    maxlength: jQuery.validator.format("Su maxima lngitud es de {0} caracteres."),
+                },
+                email: {
+                  required: "Este campo es requerido.",
+                  email: "El email debe estar en un formato valido ej: email@email.com.ar"
+                },
+                password:{
+                  
+                    minlength: jQuery.validator.format("Su minima lngitud es de {0} caracteres.")
+                    
+                },
+                rep_password:{
+                    
+                    required: "Este campo es requerido.",
+                    minlength: jQuery.validator.format("Su minima lngitud es de {0} caracteres."),
+                    equalTo: "Las contraseñas son diferentes"
+                }
+              }
+    });
+}
 });
