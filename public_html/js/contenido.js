@@ -35,8 +35,7 @@ $(document).ready(function ()
         window.open('index.html','_self');
     });
     
-    $('#welcome_usuario').html('Bienvenido: '+usuario.user);
-    $('#welcome_usuario_colapsed').html('Bienvenido: '+usuario.user);
+    setWelcome(usuario.user);
     $('.avatar').prop('src','img/avatars/'+usuario.avatar);
     
     
@@ -107,6 +106,8 @@ $(document).ready(function ()
                         "avatar": nuevo_avatar})
                 );
             
+            setWelcome(tmp_user);
+            
             usuario = JSON.parse(sessionStorage.getItem('usuario'));
             alert('Usuario modificado: ' + sessionStorage.getItem('usuario'));
         }
@@ -123,7 +124,13 @@ $(document).ready(function ()
 //        $('#perfil_usuario #user').val();
         
     });
-    
+
+function setWelcome(user)
+{
+    $('#welcome_usuario').html('Bienvenido: '+user);
+    $('#welcome_usuario_colapsed').html('Bienvenido: '+user);    
+}
+
 function validaForm()
 {
     return $('#perfil_usuario').validate(
