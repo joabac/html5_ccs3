@@ -35,9 +35,8 @@ $(document).ready(function ()
         window.open('index.html','_self');
     });
     
-    $('#welcome_usuario').html('Bienvenido: '+usuario.user);
-    $('#welcome_usuario_colapsed').html('Bienvenido: '+usuario.user);
-    $('.avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
+    setWelcome(usuario.user);
+    $('.avatar').prop('src','img/avatars/'+usuario.avatar);
     
     
     $('#avatar').magnificPopup({
@@ -55,7 +54,7 @@ $(document).ready(function ()
 					this.st.focus = '#nombre';
 				}
                                 
-                                $('#perfil_usuario .avatar').prop('src','img/avatars/'+usuario.avatar+'.png');
+                                $('#perfil_usuario .avatar').prop('src','img/avatars/'+usuario.avatar);
                                 
                                 $('#perfil_usuario #nombre').val(usuario.nombre);
                                 $('#perfil_usuario #apellido').val(usuario.apellido);
@@ -82,12 +81,37 @@ $(document).ready(function ()
         validaForm()
         if($('#perfil_usuario').valid())
         {
-            alert('valido');
+            var ruta_nuevo_avatar = $('#perfil_usuario .avatar').prop('src').split('/');
+            var nuevo_avatar = ruta_nuevo_avatar[ruta_nuevo_avatar.length-1];
+
+            var tmp_nombre = $('#perfil_usuario #nombre').val();
+            var tmp_apell = $('#perfil_usuario #apellido').val();
+            var tmp_email = $('#perfil_usuario #email').val();
+            
+            if($('#perfil_usuario #password').val() !== '')
+            {
+                var tmp_password = MD5( $('#perfil_usuario #password').val());
+            }
+            else
+            {
+                var tmp_password = usuario.pass;
+            }
+            var tmp_user = $('#perfil_usuario #user').val();
+            
+            sessionStorage.setItem('usuario',JSON.stringify({"nombre":tmp_nombre,
+                        "apellido":tmp_apell,
+                        "email":tmp_email,
+                        "user":tmp_user,
+                        "pass": tmp_password,
+                        "avatar": nuevo_avatar})
+                );
+            
+            setWelcome(tmp_user);
+            
+            usuario = JSON.parse(sessionStorage.getItem('usuario'));
+            alert('Usuario modificado: ' + sessionStorage.getItem('usuario'));
         }
-        else
-        {
-            alert('no valido');
-        }
+       
         
         //TODO: validar campos y guardar en local session
 //        ruta_nuevo_avatar = $('#perfil_usuario .avatar').prop('src').split('/');
@@ -100,7 +124,13 @@ $(document).ready(function ()
 //        $('#perfil_usuario #user').val();
         
     });
-    
+
+function setWelcome(user)
+{
+    $('#welcome_usuario').html('Bienvenido: '+user);
+    $('#welcome_usuario_colapsed').html('Bienvenido: '+user);    
+}
+
 function validaForm()
 {
     return $('#perfil_usuario').validate(
