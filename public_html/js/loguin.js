@@ -83,7 +83,10 @@ $(document).ready(function ()
             
         });
         
-        
+    $('#recuperar_clave').submit(function (event)
+    {    
+        alert('La nueva clave fue enviada a su correo electrónico.');
+    });
         
 });
 
