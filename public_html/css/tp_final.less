@@ -16,6 +16,7 @@ lessc -x bootstrap.less /var/www/tp_final/public_html/css/bootstrap_tpfinal.css
 @santaFe_color_marca: #e30613;
 @santaFe_color_base: #D8DBDD;
 @santaFe_font_family: Aller;
+@santaFe_color_fuente_Footer: #888888;
  
 
 html
@@ -23,6 +24,15 @@ html
     font-family: @santaFe_font_family;
     
 }
+
+body
+{
+    
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
 
 
 .loguin
@@ -72,6 +82,12 @@ html
     }
 }
 
+.corta_palabra
+{
+    word-wrap: normal;
+    word-break: break-word;
+}
+
 
 .radio_esquinas(@radio)
 {
@@ -94,23 +110,71 @@ html
     border-bottom-left-radius: @radio_bottom;
 }
 
+.sombra_contenedor()
+{
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+    -moz-box-shadow:    0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+    box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+}
+
 /* > 769px*/
 @media (min-width: 769px)   
 {
     body
     {
+        & .contenido
+        {
+            margin-top: 55px;
+                               
+        }
+        
         background-color: @santaFe_color_base;
-
+        
+        & .espacio
+        {
+            height: 55px;
+        }
+        
+        & .espacio_dashboard
+        {
+            height: 10px;
+        }
+        
+        & .ultimas_ventas
+        {
+            
+            background-color: #ffffff;
+            .sombra_contenedor();
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+            .corta_palabra;
+            
+        }
+        
+         & .ultimos_ingresos
+        {
+            background-color: #ffffff;
+            .sombra_contenedor();
+            
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+        }
+        
         & .barra_nav
         {
            
             background-color: @santaFe_color_marca;
             height: 55px;
             font-size: 15px;
-/*            & #nav_colapsed
-            {
-                width: 370px;
-            }*/
+
             & .avatar
             {
                 height: 45px;
@@ -139,6 +203,13 @@ html
             }
             
         }
+        
+        & .graficos .highcharts-container
+        {
+            margin-top: 5px;
+            .sombra_contenedor();
+        }
+        
         
         & .white-popup-block
         {
@@ -177,9 +248,7 @@ html
         & .loguin
         {
             .radio_esquinas(20px);
-            -webkit-box-shadow: 0px 0px 21px 0px rgba(50, 50, 50, 0.99);
-            -moz-box-shadow:    0px 0px 21px 0px rgba(50, 50, 50, 0.99);
-            box-shadow:         0px 0px 21px 0px rgba(50, 50, 50, 0.99);
+            .sombra_contenedor();
         }
         
         & label.error
@@ -193,6 +262,24 @@ html
             color:#ff6600;
             
         }
+       
+        & .footer
+        {
+                width:100%;
+                height:84px;
+                position:absolute;
+                left:0;
+                background-color: #D4D5D5;
+                border-top: 1px solid rgba(192,192,192,1);
+                padding-top: 3px;
+                & p
+                {
+                    padding: 0px;
+                    margin: 0px;
+                    color: @santaFe_color_fuente_Footer;
+                    
+                }
+        }
     }
 }
 
@@ -203,6 +290,51 @@ html
     {
         background-color: @santaFe_color_marca;
         height: 40px;
+        
+        & .contenido
+        {
+            margin-top: 55px;
+                               
+        }
+        
+        & .espacio
+        {
+            height: 55px;
+        }
+        
+        & .espacio_dashboard
+        {
+            height: 10px;
+        }
+       
+        
+        & .ultimas_ventas
+        {
+            background-color: #ffffff;
+            .sombra_contenedor();
+            
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+            .corta_palabra;
+           
+        }
+        
+         & .ultimos_ingresos
+        {
+            background-color: #ffffff;
+            .sombra_contenedor();
+            
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+        }
         
         & .barra_nav
         {
@@ -253,6 +385,12 @@ html
            
         }  
         
+        & .graficos .highcharts-container
+        {
+            margin-top: 5px;
+            
+        }
+        
         & .white-popup-block
         {
             & .avatar
@@ -293,6 +431,24 @@ html
             margin: 2px 0px 2px 0px;
         }
         
+        & .footer
+        {
+                width:100%;
+                height:84px;
+                position:absolute;
+                left:0;
+                background-color: #D4D5D5;
+                border-top: 1px solid rgba(192,192,192,1);
+                padding-top: 3px;
+                
+                & p
+                {
+                    padding: 0px;
+                    margin: 0px;
+                    color: @santaFe_color_fuente_Footer;
+                    
+                }
+        }
     }
     
     
@@ -305,6 +461,49 @@ html
     body
     {
         min-width: 240px;
+        
+        & .contenido
+        {
+            margin-top: 55px;
+                               
+        }
+        
+        & .espacio
+        {
+            height: 55px;
+        }
+        
+        & .espacio_dashboard
+        {
+            height: 10px;
+        }
+        
+         & .ultimas_ventas
+        {
+            background-color: #ffffff;
+            
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+            .corta_palabra;
+            
+            
+        }
+        
+         & .ultimos_ingresos
+        {
+            background-color: #ffffff;
+            
+            & caption
+            {
+                padding-left: 5px;
+                background-color: #ffffff;
+            }
+            
+        }
         
         & .barra_nav
         {
@@ -340,6 +539,12 @@ html
             {
                
             }
+             
+        }
+        
+        & .graficos .highcharts-container
+        {
+            margin-top: 5px;
              
         }
         
@@ -390,6 +595,25 @@ html
             color:#ff6600;
             font-size: 12px;
             margin: 2px 0px 2px 0px;
+        }
+        
+        & .footer
+        {
+                width:100%;
+                height:84px;
+                position:absolute;
+                left:0;
+                background-color: #D4D5D5;
+                border-top: 1px solid rgba(192,192,192,1);
+                font-size: 12px;
+                padding-top: 3px;
+                & p
+                {
+                    padding: 0px;
+                    margin: 0px;
+                    color: @santaFe_color_fuente_Footer;
+                    
+                }
         }
     }
 }

@@ -1,0 +1,9 @@
+{
+    "ultimas_ventas" : [
+        { "cliente" : "Jose", "producto" : "Placa Video" , "email":"unemail@email.com", "precio":600},
+        { "cliente" : "Pedro", "producto" : "Mouse" , "email":"otroemail@email.com", "precio":60},
+        { "cliente" : "Gonzalo", "producto" : "Teclado" , "email":"nuevomail@email.com", "precio":120},
+        { "cliente" : "Juan", "producto" : "Monitor" , "email":"sumail@email.com", "precio":1500},
+        { "cliente" : "Martin", "producto" : "Cable HDMI" , "email":"elemail@email.com", "precio":400}
+    ]
+}

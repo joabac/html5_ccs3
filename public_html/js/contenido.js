@@ -6,6 +6,7 @@
 
 var recordar;
 var usuario;
+var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
 $(document).ready(function ()
 {
@@ -78,7 +79,7 @@ $(document).ready(function ()
     $('#perfil_usuario').submit(function (event)
     {
         event.preventDefault();
-        validaForm()
+        validaForm();
         if($('#perfil_usuario').valid())
         {
             var ruta_nuevo_avatar = $('#perfil_usuario .avatar').prop('src').split('/');
@@ -113,42 +114,100 @@ $(document).ready(function ()
         } 
     }); //fin edit perfil usuario
 
-    $('#graficos').highcharts({
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: 'Monthly Average Temperature'
-            },
-            subtitle: {
-                text: 'Source: WorldClimate.com'
-            },
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-            },
-            yAxis: {
-                title: {
-                    text: 'Temperature (°C)'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
+
+    //grafico cargado por JSON
+    $.getJSON('js/ventas.json', function (datos) {
+        
+            $('#graficos').highcharts({
+                  
+                    chart: {
+                        type: 'line'
                     },
-                    enableMouseTracking: false
-                }
-            },
-            series: [{
-                name: 'Tokyo',
-                data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-            }, {
-                name: 'London',
-                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-            }]
+                    title: {
+                        text: 'Tendencia de Ventas mes de: '+ meses[ (new Date).getMonth()],
+                    },
+                     chart: {
+                        zoomType: 'x'
+                    },
+                    subtitle: {
+                        text: 'Tendencia de ventas'
+                    },
+                    xAxis: {
+                         type: 'datetime'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Venta en miles de Pesos ($ARG)'
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true
+                            },
+                            enableMouseTracking: false
+                        }
+                    },
+                    series: [{
+                        type: 'line',
+                        name: 'Ventas del mes',
+                        data: datos.ventas
+                    }]
+                });
+            });
+        
+        
+        //Uso de metodos jQuery manipulacion de DOM
+        $.getJSON('js/ultimas_ventas.json', function (datos) {    
+
+             $(datos.ultimas_ventas).each(function(idx,fila)
+             {
+                 //{ "cliente" : "Jose", "producto" : "Placa Video" , "email":"unemail@email.com", "precio":600},
+                 $('.ultimas_ventas .cuerpo_tabla').append('<tr><td>'+fila.cliente+'</td><td>'+fila.producto+'</td><td class="corta_palabra">'+fila.email+'</td><td>$'+fila.precio+'</td></tr>');
+             });
+
         });
-    });
- 
+         
+        $.getJSON('js/ultimos_ingresos.json', function (datos) {    
+
+            
+             $(datos.ultimos_ingresos).each(function(idx,fila)
+             {
+                 //{ "cliente" : "Jose", "ip" : "162.10.11.20" , "navegador":"Chrome", "region":"Santa Fe"},
+                 $('.ultimos_ingresos .cuerpo_tabla').append('<tr><td>'+fila.cliente+'</td><td class="corta_palabra">'+fila.ip+'</td><td>'+fila.navegador+'</td><td>'+fila.region+'</td></tr>');
+             });
+
+        });
+         
+       
+        if($(window).height() > $('.contenido').height())
+             $('footer').css('top',($(window).height()-84));
+        else
+        {   
+            $('footer').css('top',$('.contenido').height()+50);
+        }
+        
+        $(window).resize(function ()
+        {
+            if($(window).height() > $('.contenido').height())
+                 $('footer').css('top',($(window).height()-84));
+            else
+            {
+                $('footer').css('top',$('.contenido').height()+50);
+            }
+        });
+        
+        $(window).scroll(function ()
+        {
+            if($(window).height() > $('.contenido').height())
+                 $('footer').css('top',($(window).height()-84));
+            else
+            {
+                $('footer').css('top',$('.contenido').height()+50);
+            }
+        });
+
+});
  
 
 
