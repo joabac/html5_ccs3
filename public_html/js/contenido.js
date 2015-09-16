@@ -120,14 +120,16 @@ $(document).ready(function ()
         
             $('#graficos').highcharts({
                   
-                    chart: {
-                        type: 'line'
-                    },
+                    
                     title: {
                         text: 'Tendencia de Ventas mes de: '+ meses[ (new Date).getMonth()],
                     },
                      chart: {
                         zoomType: 'x'
+                    },
+                    tooltip: {
+                        shared: true,
+                        crosshairs: true
                     },
                     subtitle: {
                         text: 'Tendencia de ventas'
@@ -140,16 +142,24 @@ $(document).ready(function ()
                             text: 'Venta en miles de Pesos ($ARG)'
                         }
                     },
+                    tooltip: {
+                        valueSuffix: 'K$'
+                    },
                     plotOptions: {
-                        line: {
-                            dataLabels: {
+                       spline: {
+                            marker: {
                                 enabled: true
                             },
-                            enableMouseTracking: false
+                            dataLabels: {
+                                enabled: true
+                            }
                         }
                     },
                     series: [{
-                        type: 'line',
+                        lineWidth: 4,
+                        marker: {
+                            radius: 4
+                        },
                         name: 'Ventas del mes',
                         data: datos.ventas
                     }]
