@@ -172,7 +172,7 @@ body
         {
            
             background-color: @santaFe_color_marca;
-            height: 55px;
+            height: 51px;
             font-size: 15px;
 
             & .avatar
@@ -185,6 +185,12 @@ body
             & .navbar-brand
             {
                 padding: 5px;
+            }
+            
+            & .navbar-nav li
+            {
+                background-color: grey;
+                height: 51px;
             }
             
             #welcome_usuario
@@ -243,6 +249,10 @@ body
             max-width: 650px;
             margin: 40px auto;
             position: relative;
+            &#abm_clientes
+            {
+                max-width: 740px;
+            }
         }
 
         & .loguin
@@ -618,5 +628,12 @@ body
     }
 }
 .text-white{
-    color: white;
+    color: white !important;
+}
+
+.divider {
+    border-left: 1px solid #f18389;
+    padding-left: 9px;
+    margin-left: 9px;
+    height: 38px;
 }

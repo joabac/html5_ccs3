@@ -6861,7 +6861,7 @@ body {
   }
   body .barra_nav {
     background-color: #e30613;
-    height: 55px;
+    height: 51px;
     font-size: 15px;
   }
   body .barra_nav .avatar {
@@ -6871,6 +6871,10 @@ body {
   }
   body .barra_nav .navbar-brand {
     padding: 5px;
+  }
+  body .barra_nav .navbar-nav li {
+    background-color: grey;
+    height: 51px;
   }
   body .barra_nav #welcome_usuario_colapsed {
     display: none;
@@ -6923,6 +6927,9 @@ body {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     background-color: #e30613;
+  }
+  body .white-popup-block#abm_clientes {
+    max-width: 740px;
   }
   body .loguin {
     -webkit-border-radius: 20px;
@@ -7202,7 +7209,13 @@ body {
   }
 }
 .text-white {
-  color: white;
+  color: white !important;
+}
+.divider {
+  border-left: 1px solid #f18389;
+  padding-left: 9px;
+  margin-left: 9px;
+  height: 38px;
 }
 @font-face {
   font-family: 'aller';
